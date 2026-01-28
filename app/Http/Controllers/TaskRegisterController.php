@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use app\Models\Task;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Task;
 
 class TaskRegisterController extends Controller
 {
@@ -27,6 +28,6 @@ class TaskRegisterController extends Controller
             'deadline' => $request->deadline,
         ]);
 
-        return redirect() -> route('show_task_list');
+        return redirect()->route('show_task_register');
     }
 }

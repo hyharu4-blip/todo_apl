@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskListController;
 use App\Http\Controllers\TaskRegisterController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -15,3 +16,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/task/register', [TaskRegisterController::class, 'index'])->name('show_task_register');
 
 Route::post('/task/register', [TaskRegisterController::class, 'register'])->name('task_register');
+
+Route::get('/task/list', [TaskListController::class, 'index'])->name('show_task_list');
