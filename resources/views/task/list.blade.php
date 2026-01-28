@@ -34,8 +34,8 @@
                             <td>@if( $task->finish_fig == 1) 完了 @else 未完了 @endif</td>
                             <td>{{ optional( $task->finish_date )->format('Y-m-d') }}</td>
                             <td>完了</td>
+                            <td><a href="{{ route('show_task_edit',['task_id' => $task->id]) }}" class="btn btn-primary">編集</a></td>
                             <td>削除</td>
-                            <td>編集</td>
                         </tr>
                         @endforeach
                     </tobody>
