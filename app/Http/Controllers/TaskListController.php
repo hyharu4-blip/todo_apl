@@ -15,4 +15,23 @@ class TaskListController extends Controller
                     ->get();
         return view('task.list', compact('tasks'));
     }
+
+    public function finish(Request $request, $task_id){
+        $task = Task::findOrFail($task_id);
+
+        $task->update([
+            'finish_flg' => 1,
+            'finish_date' => now(),
+        ]);
+
+        return redirect()->route('show_task_list');
+    }
+    
+    public function delete(Request $request, $task_id){
+        $task = Task::findOrFail($task_id);
+
+        $task->delete();
+
+        return redirect()->route('show_task_list');
+    }
 }

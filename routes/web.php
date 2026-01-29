@@ -23,3 +23,7 @@ Route::get('/task/list', [TaskListController::class, 'index'])->name('show_task_
 Route::get('/task/edit/{task_id}', [TaskEditController::class, 'index'])->name('show_task_edit');
 
 Route::post('/task/edit/{task_id}', [TaskEditController::class, 'edit'])->name('task_edit');
+
+Route::post('/task/finish/{task_id}', [TaskListController::class, 'finish'])->name('task_finish');
+
+Route::post('/task/delete/{task_id}', [TaskListController::class, 'delete'])->name('task_delete');

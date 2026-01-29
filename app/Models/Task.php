@@ -12,7 +12,7 @@ class Task extends Model
         'title',
         'detail',
         'deadline',
-        'finish_fig',
+        'finish_flg',
         'finish_date',
     ];
 
