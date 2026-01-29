@@ -1,0 +1,20 @@
+span{
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+
+.cell-display{
+    max-width: 300px;
+    word-break: break-word;
+    white-space: normal;
+}
+
+.custom-btn{
+    transition: .3s cubin-bezier(0.5, 1, 0.89, 1);
+}
+.custom-btn:hover{
+    background: white;
+    color: black;
+    transform: scale(1.1);
+}
