@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::middleware('auth')->group(function(){
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/task/register', [TaskRegisterController::class, 'index'])->name('show_task_register');
@@ -27,3 +28,4 @@ Route::post('/task/edit/{task_id}', [TaskEditController::class, 'edit'])->name('
 Route::post('/task/finish/{task_id}', [TaskListController::class, 'finish'])->name('task_finish');
 
 Route::post('/task/delete/{task_id}', [TaskListController::class, 'delete'])->name('task_delete');
+});
