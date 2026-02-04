@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <h1 class="mb-4 text-center fw-bold">タスク編集画面</h1>
 
-            <div class="card mb-4 shadow-sm bg-white">
+            <div class="card shadow-sm bg-white">
                 @include('common.errors')
 
                 <div class="card-body">
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="fionish_date" class="form-label">{{ config('const.label.finish_date') }}</label>
+                            <label for="finish_date" class="form-label">{{ config('const.label.finish_date') }}</label>
                             <input type="date" id="finish_date" name="finish_date" class="form-control" value="{{ old('finish_date', optional($task->finish_date)->format('Y-m-d')) }}">
                         </div>
                         <div class="mb-3 text-center">
@@ -47,4 +47,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/task_edit.js') }}"></script>
 @endsection
