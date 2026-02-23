@@ -24,7 +24,7 @@ class TaskListController extends Controller
             'finish_date' => now(),
         ]);
 
-        return redirect()->route('show_task_list');
+        return redirect()->route('show_task_list', ['home_move' => $request->get('home_move')]);
     }
     
     public function delete(Request $request, $task_id){
@@ -32,6 +32,6 @@ class TaskListController extends Controller
 
         $task->delete();
 
-        return redirect()->route('show_task_list');
+        return redirect()->route('show_task_list', ['home_move' => $request->get('home_move')]);
     }
 }

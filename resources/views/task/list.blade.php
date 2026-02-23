@@ -6,7 +6,10 @@
             <h1 class="text-center fw-bold mb-4">タスク一覧画面</h1>
             <div class="d-flex justify-content-end mb-3">
                 <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="hide_finished">
+                    <!-- 20260223 開発演習6 yomura haruto edit s -->
+                    <!-- <input type="checkbox" class="form-check-input" id="hide_finished"> -->
+                    <input type="checkbox" class="form-check-input" id="hide_finished" {{ request('home_move') == 1 ? 'checked' : '' }}>
+                    <!-- 20260223 開発演習6 yomura haruto edit e -->
                     <label class="form-check-label" for="hide_finished">完了タスクの非表示</label>
                 </div>
             </div>

@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', function(){
     const checkbox = document.getElementById('hide_finished');
+    
+    // 20260223 開発演習6 yomura haruto del s
+    // checkbox.addEventListener('change',function(){
+    // 20260223 開発演習6 yomura haruto del e
 
-    checkbox.addEventListener('change',function(){
+    // 20260223 開発演習6 yomura haruto add s
+    const updateVisit = () => {
+    // 20260223 開発演習6 yomura haruto add e
         const rows = document.querySelectorAll('tbody tr');
 
         rows.forEach(row => {
@@ -15,5 +21,10 @@ document.addEventListener('DOMContentLoaded', function(){
                 row.style.display = '';
             }
         });
-    });
+    };
+
+    // 20260223 開発演習6 yomura haruto add s
+    checkbox.addEventListener('change', updateVisit);
+    updateVisit();
+    // 20260223 開発演習6 yomura haruto add e
 });
